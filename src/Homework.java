@@ -19,11 +19,18 @@ public class Homework
         int[] numbers = {3, 3, 4, 2, 4, 4, 2, 4, 4};
         System.out.println(isTrue(numbers));
 
+
+
+
+
+
+
+        
         ArrayList<String> brackets = new ArrayList<String>();
-//        brackets.add("(");
-//
-//        brackets.add("(");
-//        brackets.add("(");
+        //        brackets.add("(");
+        //
+        //        brackets.add("(");
+        //        brackets.add("(");
 
         brackets.add("(");
         brackets.add("[");
@@ -32,7 +39,10 @@ public class Homework
         brackets.add("]");
         brackets.add(")");
 
-
+//        brackets.add(")");
+//        brackets.add(")");
+//        brackets.add(")");
+//        brackets.add(")");
 
 
         System.out.println(bracketTrue(brackets));
@@ -94,28 +104,27 @@ public class Homework
 
             }
 
-
-            if(bracket.equals("]") && stack.peek().equals("["))
+            if (!stack.isEmpty())
             {
-               stack.pop();
-            }
-            else if(bracket.equals("}") && stack.peek().equals("{"))
-            {
-                stack.pop();
+                if(bracket.equals("]") && stack.peek().equals("["))
+                {
+                    stack.pop();
+                }
+                else if(bracket.equals("}") && stack.peek().equals("{"))
+                {
+                    stack.pop();
 
+                }
+                else if(bracket.equals(")") && stack.peek().equals("("))
+                {
+                    stack.pop();
+                }
+            } else {
+                return false;
             }
-            else if(bracket.equals(")") && stack.peek().equals("("))
-            {
-                stack.pop();
-            }
-
 
         }
 
-
-
-        System.out.println(brackets);
-//        System.out.println(stack.peek());
         return stack.isEmpty();
 
     }
