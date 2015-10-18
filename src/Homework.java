@@ -25,12 +25,14 @@ public class Homework
 
 
 
-        
+
         ArrayList<String> brackets = new ArrayList<String>();
         //        brackets.add("(");
         //
         //        brackets.add("(");
         //        brackets.add("(");
+
+
 
         brackets.add("(");
         brackets.add("[");
@@ -89,20 +91,13 @@ public class Homework
 
         for(String bracket : brackets)
         {
-            if(bracket.equals("["))
-            {
-                stack.push(bracket);
-            }
-            else if(bracket.equals("{"))
-            {
-                stack.push(bracket);
 
-            }
-            else if(bracket.equals("("))
+            if(bracket.equals("[") || bracket.equals("{") || bracket.equals("("))
             {
                 stack.push(bracket);
-
             }
+
+
 
             if (!stack.isEmpty())
             {
