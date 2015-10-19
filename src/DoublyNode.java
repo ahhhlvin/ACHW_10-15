@@ -62,9 +62,24 @@ class List2
         }
 
         if (current != null) {
-            current.next.prev = current.prev;
-            current.prev.next = current.next;
+
+            if (current == head)
+            {
+                head = head.next;
+            } else {
+                current.prev.next = current.next;
+            }
+
+            if (current == tail) {
+                tail = tail.prev;
+            } else {
+                current.next.prev = current.prev;
+            }
+
+
         }
+
+
     }
 
 
